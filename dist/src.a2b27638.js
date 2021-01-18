@@ -32679,9 +32679,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function App() {
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/browse"
-  }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the sign in page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/signin"
+  }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the sign in page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/signup"
   }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the sign up page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/browse"
   }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the browse page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
