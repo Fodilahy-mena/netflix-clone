@@ -1,5 +1,5 @@
 import React from 'react';
-import {Accordion} from '../components';
+import {Accordion, OptForm} from '../components';
 import { Item } from '../components/jambotron/styles/jumbotron';
 import faqsData from '../fixtures/faqs.json';
 
@@ -19,6 +19,11 @@ export default function FaqsContainer() {
                 </Accordion.Item>
                 ))}
             </Accordion.Frame>
+            <OptForm>
+                <OptForm.Input placeholder="Email Adress"/>
+                <OptForm.Button>Try it now!</OptForm.Button>
+                <OptForm.Text>Ready to watch? Enter your email to create ot restart your membership.</OptForm.Text>
+            </OptForm>
         </Accordion>
     )
 }
