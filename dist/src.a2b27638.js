@@ -36380,13 +36380,123 @@ OptForm.Text = function OptFormText(_ref4) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Logo = exports.ButtonLink = exports.Link = exports.Container = exports.Background = void 0;
+exports.Profile = exports.Dropdown = exports.Picture = exports.SearchInput = exports.SearchIcon = exports.Search = exports.PlayButton = exports.FeatureCallOut = exports.Feature = exports.Text = exports.Group = exports.Logo = exports.ButtonLink = exports.Link = exports.Container = exports.Background = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject16() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    margin-left: 20px;\n    position: relative;\n    button {\n        cursor: pointer;\n    }\n    &:hover > ", " {\n        display: flex;\n        flex-direction: column;\n    }\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n    display: none;\n    position: absolute;\n    background-color: black;\n    padding: 10px;\n    width: 100px;\n    top: 32px;\n    right: 10px;\n    ", ":last-of-type ", " {\n        cursor: pointer;\n    }\n    ", " {\n        margin-bottom: 10px;\n        &:last-of-type {\n            margin-bottom: 0;\n        }\n        ", ", ", " {\n            cursor: default;\n        }\n    }\n    button {\n        margin-right: 10px;\n    }\n    p {\n        font-size: 12px;\n        margin-bottom: 0;\n        margin-top: 0;\n    }\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n    background: url(", ");\n    background-size: contain;\n    border: 0;\n    width: 32px;\n    height: 32px;\n    cursor: pointer;\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n    background-color: #44444459;\n    color: white;\n    border: 1px solid white;\n    transition: width 0.5s;\n    height: 30px;\n    font-size: 14px;\n    margin-left: ", ";\n    padding: ", ";\n    opacity: ", ";\n    width: ", ";\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n    cursor: pointer;\n    background-color: transparent;\n    border: 0;\n    img {\n        filter: brightness(0) invert(1);\n        width: 16px;\n    }\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    @media (max-width: 700px) {\n        display: none;\n    }\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n    box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);\n    background-color: #e6e6e6;\n    color: #000;\n    border-width: 0;\n    padding: 10px 20px;\n    border-radius: 5px;\n    max-width: 130px;\n    font-weight: bold;\n    font-size: 20px;\n    margin-top: 10px;\n    cursor: pointer;\n    transition: background-color: 0.5s ease;\n    &:hover {\n        background: #ff1e1e;\n        color: white;\n    }\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    font-size: 50px;\n    line-height: normal;\n    font-weight: bold;\n    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);\n    margin: 0;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n    padding: 150px 0 500px 0;\n    flex-direction: column;\n    align-items: normal;\n    width: 50%;\n    @media (max-width: 1100px) {\n        display: none;\n    }\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    font-size: 22px;\n    line-height: normal;\n    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject5() {
   var data = _taggedTemplateLiteral(["\n    height: 32px;\n    width: 108px;\n    margin-right: 40px;\n    @media (min-width: 1449px) {\n        height: 45px;\n        width: 167px;\n    }\n"]);
@@ -36466,6 +36576,63 @@ exports.ButtonLink = ButtonLink;
 var Logo = _styledComponents.default.img(_templateObject5());
 
 exports.Logo = Logo;
+
+var Group = _styledComponents.default.div(_templateObject6());
+
+exports.Group = Group;
+
+var Text = _styledComponents.default.p(_templateObject7());
+
+exports.Text = Text;
+var Feature = (0, _styledComponents.default)(Container)(_templateObject8());
+exports.Feature = Feature;
+
+var FeatureCallOut = _styledComponents.default.h2(_templateObject9());
+
+exports.FeatureCallOut = FeatureCallOut;
+
+var PlayButton = _styledComponents.default.button(_templateObject10());
+
+exports.PlayButton = PlayButton;
+
+var Search = _styledComponents.default.div(_templateObject11());
+
+exports.Search = Search;
+
+var SearchIcon = _styledComponents.default.button(_templateObject12());
+
+exports.SearchIcon = SearchIcon;
+
+var SearchInput = _styledComponents.default.input(_templateObject13(), function (_ref4) {
+  var active = _ref4.active;
+  return active === true ? '10px' : '0';
+}, function (_ref5) {
+  var active = _ref5.active;
+  return active === true ? '0 10px' : '0';
+}, function (_ref6) {
+  var active = _ref6.active;
+  return active === true ? '1' : '0';
+}, function (_ref7) {
+  var active = _ref7.active;
+  return active === true ? '200px' : '0px';
+});
+
+exports.SearchInput = SearchInput;
+
+var Picture = _styledComponents.default.button(_templateObject14(), function (_ref8) {
+  var src = _ref8.src;
+  return src;
+});
+
+exports.Picture = Picture;
+
+var Dropdown = _styledComponents.default.div(_templateObject15(), Group, Link, Group, Link, Picture);
+
+exports.Dropdown = Dropdown;
+
+var Profile = _styledComponents.default.div(_templateObject16(), Dropdown);
+
+exports.Profile = Profile;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/components/header/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -36474,13 +36641,27 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = Header;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
 var _header = require("./styles/header");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -36504,22 +36685,115 @@ Header.Frame = function HeaderFrame(_ref2) {
   return /*#__PURE__*/_react.default.createElement(_header.Container, restProps, children);
 };
 
-Header.Logo = function HeaderLogo(_ref3) {
-  var to = _ref3.to,
-      restProps = _objectWithoutProperties(_ref3, ["to"]);
+Header.Group = function HeaderGroup(_ref3) {
+  var children = _ref3.children,
+      restProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Group, restProps, children);
+};
+
+Header.Link = function HeaderLink(_ref4) {
+  var children = _ref4.children,
+      restProps = _objectWithoutProperties(_ref4, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Link, restProps, children);
+};
+
+Header.Text = function HeaderText(_ref5) {
+  var children = _ref5.children,
+      restProps = _objectWithoutProperties(_ref5, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Text, restProps, children);
+};
+
+Header.Logo = function HeaderLogo(_ref6) {
+  var to = _ref6.to,
+      restProps = _objectWithoutProperties(_ref6, ["to"]);
 
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: to
   }, /*#__PURE__*/_react.default.createElement(_header.Logo, restProps));
 };
 
-Header.ButtonLink = function HeaderButtonLink(_ref4) {
-  var to = _ref4.to,
-      restProps = _objectWithoutProperties(_ref4, ["to"]);
+Header.ButtonLink = function HeaderButtonLink(_ref7) {
+  var to = _ref7.to,
+      restProps = _objectWithoutProperties(_ref7, ["to"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.ButtonLink, _extends({}, restProps, {
     to: to
   }));
+};
+
+Header.Feature = function HeaderFeature(_ref8) {
+  var children = _ref8.children,
+      restProps = _objectWithoutProperties(_ref8, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Feature, restProps, children);
+};
+
+Header.FeatureCallOut = function HeaderFeatureCallOut(_ref9) {
+  var children = _ref9.children,
+      restProps = _objectWithoutProperties(_ref9, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.FeatureCallOut, restProps, children);
+};
+
+Header.PlayButton = function HeaderPlayButton(_ref10) {
+  var children = _ref10.children,
+      restProps = _objectWithoutProperties(_ref10, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.PlayButton, restProps, children);
+};
+
+Header.Search = function HeaderSearch(_ref11) {
+  var searchTerm = _ref11.searchTerm,
+      setSearchTerm = _ref11.setSearchTerm,
+      restProps = _objectWithoutProperties(_ref11, ["searchTerm", "setSearchTerm"]);
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      searchActive = _useState2[0],
+      setSearchActive = _useState2[1];
+
+  return /*#__PURE__*/_react.default.createElement(_header.Search, restProps, /*#__PURE__*/_react.default.createElement(_header.SearchIcon, {
+    onClick: function onClick() {
+      return setSearchActive(!searchActive);
+    }
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: "images/icons/search.png",
+    alt: "Search"
+  })), /*#__PURE__*/_react.default.createElement(_header.SearchInput, {
+    value: searchTerm,
+    onChange: function onChange(_ref12) {
+      var target = _ref12.target;
+      return setSearchTerm(target.value);
+    },
+    placeholder: "Search files and series",
+    active: searchActive
+  }));
+};
+
+Header.Profile = function HeaderProfile(_ref13) {
+  var children = _ref13.children,
+      restProps = _objectWithoutProperties(_ref13, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Profile, restProps, children);
+};
+
+Header.Picture = function HeaderPicture(_ref14) {
+  var src = _ref14.src,
+      restProps = _objectWithoutProperties(_ref14, ["src"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Picture, _extends({}, restProps, {
+    src: "/images/users/".concat(src, ".png")
+  }));
+};
+
+Header.Dropdown = function HeaderDropdown(_ref15) {
+  var children = _ref15.children,
+      restProps = _objectWithoutProperties(_ref15, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Dropdown, restProps, children);
 };
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./styles/header":"src/components/header/styles/header.js"}],"src/components/feature/styles/feature.js":[function(require,module,exports) {
 "use strict";
@@ -37569,11 +37843,54 @@ function BrowseContainer() {
       profile = _useState2[0],
       setProfile = _useState2[1];
 
+  var _useState3 = (0, _react.useState)('series'),
+      _useState4 = _slicedToArray(_useState3, 2),
+      category = _useState4[0],
+      setCategory = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      loading = _useState6[0],
+      setLoading = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(true),
+      _useState8 = _slicedToArray(_useState7, 2),
+      searchTerm = _useState8[0],
+      setSearchTerm = _useState8[1];
+
   var user = {
     displayName: "Jerome",
     photoURL: '1'
   };
-  return profile.displayName ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, "Browse Container"), /*#__PURE__*/_react.default.createElement(_footer.default, null)) : /*#__PURE__*/_react.default.createElement(_profiles.default, {
+  return profile.displayName ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_components.Header, {
+    src: "joker1",
+    dontShowOnSmallViewPort: true
+  }, /*#__PURE__*/_react.default.createElement(_components.Header.Frame, null, /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Logo, {
+    to: ROUTES.HOME,
+    src: "/images/misc/logo.svg",
+    alt: "Netflix"
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
+    active: category === 'series' ? 'true' : 'false',
+    onClick: function onClick() {
+      return setCategory('series');
+    }
+  }, "Series"), /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
+    active: category === 'films' ? 'true' : 'false',
+    onClick: function onClick() {
+      return setCategory('films');
+    }
+  }, "Films")), /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Search, {
+    searchTerm: searchTerm,
+    setSearchTerm: setSearchTerm
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.Profile, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, {
+    src: user.photoURL
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.DropDown, null, /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, {
+    src: user.photoURL
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.Link, null, user.displayName)), /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
+    onClick: function onClick() {
+      return firebase.auth().signOUt();
+    }
+  }, "Log out")))))), /*#__PURE__*/_react.default.createElement(_components.Header.Feature, null, /*#__PURE__*/_react.default.createElement(_components.Header.FeatureCallOut, null, "Watch Joker Now"), /*#__PURE__*/_react.default.createElement(_components.Header.Text, null, "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him."), /*#__PURE__*/_react.default.createElement(_components.Header.PlayButton, null, "Play"))), /*#__PURE__*/_react.default.createElement(_footer.default, null)) : /*#__PURE__*/_react.default.createElement(_profiles.default, {
     user: user,
     setProfile: setProfile
   });
