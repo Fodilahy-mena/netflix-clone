@@ -36,7 +36,7 @@ export default function BrowseContainer() {
                         <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
                         <Header.Profile>
                             <Header.Picture src={user.photoURL}/>
-                            <Header.DropDown>
+                            <Header.Dropdown>
                                 <Header.Group>
                                     <Header.Picture src={user.photoURL}/>
                                     <Header.Link>
@@ -48,7 +48,7 @@ export default function BrowseContainer() {
                                         Log out
                                     </Header.Link>
                                 </Header.Group>
-                            </Header.DropDown>
+                            </Header.Dropdown>
                         </Header.Profile>
                     </Header.Group>
                 </Header.Frame>
