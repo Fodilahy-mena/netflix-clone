@@ -37252,7 +37252,19 @@ function Home() {
     placeholder: "Email Adress"
   }), /*#__PURE__*/_react.default.createElement(_components.OptForm.Button, null, "Try it now!"), /*#__PURE__*/_react.default.createElement(_components.OptForm.Text, null, "Ready to watch? Enter your email to create ot restart your membership.")))), /*#__PURE__*/_react.default.createElement(_jumbotron.default, null), /*#__PURE__*/_react.default.createElement(_faqs.default, null), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js","../containers/faqs":"src/containers/faqs.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js"}],"src/pages/signin.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js","../containers/faqs":"src/containers/faqs.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js"}],"src/context/firebase.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.FirebaseContext = void 0;
+
+var _react = require("react");
+
+var FirebaseContext = (0, _react.createContext)(null);
+exports.FirebaseContext = FirebaseContext;
+},{"react":"node_modules/react/index.js"}],"src/pages/signin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37261,6 +37273,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = Signin;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var ROUTES = _interopRequireWildcard(require("../constants/routes"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _firebase = require("../context/firebase");
 
 var _components = require("../components");
 
@@ -37302,10 +37320,23 @@ function Signin() {
       password = _useState6[0],
       setPassword = _useState6[1];
 
+  var history = (0, _reactRouterDom.useHistory)();
+
+  var _useContext = (0, _react.useContext)(_firebase.FirebaseContext),
+      firebase = _useContext.firebase;
+
   var isValid = emailAddress === '' || password === '';
 
   function handleSignin(event) {
     event.preventDefault();
+    firebase.auth().signInWithEmailAndPassword(emailAddress, password).then(function () {
+      setEmailAddress('');
+      setPassword('');
+      setError('');
+      history.push(ROUTES.BROUSE);
+    }).catch(function (error) {
+      return setError(error.message);
+    });
   }
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_components.Form, null, /*#__PURE__*/_react.default.createElement(_components.Form.Title, null, "Sign in"), error && /*#__PURE__*/_react.default.createElement(_components.Form.Error, null, error), /*#__PURE__*/_react.default.createElement(_components.Form.Base, {
@@ -37334,7 +37365,7 @@ function Signin() {
     to: "/signup"
   }, "Sign up now.")), /*#__PURE__*/_react.default.createElement(_components.Form.TextSmall, null, "This page is protected by google reCAPTCHA.")))), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../components":"src/components/index.js","../containers/header":"src/containers/header.js","../containers/footer":"src/containers/footer.js"}],"src/pages/signup.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../constants/routes":"src/constants/routes.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../context/firebase":"src/context/firebase.js","../components":"src/components/index.js","../containers/header":"src/containers/header.js","../containers/footer":"src/containers/footer.js"}],"src/pages/signup.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37348,9 +37379,13 @@ var _header = _interopRequireDefault(require("../containers/header"));
 
 var _footer = _interopRequireDefault(require("../containers/footer"));
 
+var _firebase = require("../context/firebase");
+
 var _components = require("../components");
 
 var ROUTES = _interopRequireWildcard(require("../constants/routes"));
+
+var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37371,6 +37406,11 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Signup() {
+  var history = (0, _reactRouterDom.useHistory)();
+
+  var _useContext = (0, _react.useContext)(_firebase.FirebaseContext),
+      firebase = _useContext.firebase;
+
   var _useState = (0, _react.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       firstName = _useState2[0],
@@ -37395,8 +37435,22 @@ function Signup() {
 
   function handleSignup(event) {
     event.preventDefault();
+    firebase.auth().createUserWithEmailAndPassword(emailAddress, password).then(function (result) {
+      result.user.updateProfile({
+        displayName: firstName,
+        photoURL: Math.floor(Math.random() * 5) + 1
+      }).then(function () {
+        setEmailAddress('');
+        setPassword('');
+        setError('');
+        history.push(ROUTES.BROUSE);
+      });
+    }).catch(function (error) {
+      return setError(error.message);
+    });
   }
 
+  ;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_components.Form, null, /*#__PURE__*/_react.default.createElement(_components.Form.Title, null, "Sign up"), error && /*#__PURE__*/_react.default.createElement(_components.Form.Error, null, error), /*#__PURE__*/_react.default.createElement(_components.Form.Base, {
     onSubmit: handleSignup,
     method: "POST"
@@ -37431,19 +37485,7 @@ function Signup() {
     to: "/signin"
   }, "Sign In.")), /*#__PURE__*/_react.default.createElement(_components.Form.TextSmall, null, "This page is protected by google reCAPTCHA.")))), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../containers/header":"src/containers/header.js","../containers/footer":"src/containers/footer.js","../components":"src/components/index.js","../constants/routes":"src/constants/routes.js"}],"src/context/firebase.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.FirebaseContext = void 0;
-
-var _react = require("react");
-
-var FirebaseContext = (0, _react.createContext)(null);
-exports.FirebaseContext = FirebaseContext;
-},{"react":"node_modules/react/index.js"}],"src/containers/profiles.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers/header":"src/containers/header.js","../containers/footer":"src/containers/footer.js","../context/firebase":"src/context/firebase.js","../components":"src/components/index.js","../constants/routes":"src/constants/routes.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/containers/profiles.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37686,7 +37728,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62472" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53860" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import HeaderContainer from '../containers/header';
 import FooterContainer from '../containers/footer';
+import {FirebaseContext} from '../context/firebase';
 import { Form } from '../components';
 import * as ROUTES from '../constants/routes';
+import {useHistory} from 'react-router-dom';
 
 export default function Signup() {
+    const history = useHistory();
+    const {firebase} = useContext(FirebaseContext);
     const [firstName, setFirstName] = useState('');
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
@@ -14,8 +18,23 @@ export default function Signup() {
 
     function handleSignup(event) {
         event.preventDefault();
-
-    }
+        firebase
+        .auth()
+        .createUserWithEmailAndPassword(emailAddress, password)
+        .then((result) => {
+            result.user
+            .updateProfile({
+                displayName: firstName,
+                photoURL: Math.floor(Math.random() * 5) + 1,
+            })
+            .then(() => {
+                setEmailAddress('');
+                setPassword('');
+                setError('');
+                history.push(ROUTES.BROUSE);
+            });
+        }).catch((error) => setError(error.message));
+    };
     return (
         <>
             <HeaderContainer>
