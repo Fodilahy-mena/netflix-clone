@@ -4,6 +4,8 @@
 		"fuse.js": "5.2.3",
 		"normalize.css": "8.0.1",
 		"r": "0.0.5",
+		"re": "^0.1.4",
+		"rea": "0.0.1",
 		"react": "^17.0.1",
 		"react-dom": "^16.14.0",
 		"react-router-dom": "^5.2.0",
