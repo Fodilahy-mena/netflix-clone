@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom';
 import GlobalStyles from './global-styles';
 import { App } from './app';
 import {FirebaseContext} from './context/firebase';
+import dotenv from 'dotenv';
 
+dotenv.config();
 // import { seedDatabase } from './seed';
 const config = {
-    apiKey: "AIzaSyBtCecoE5uK5_ulr6LAjap0F-nfe1at5vk",
-    authDomain: "netflix-onja-jerome.firebaseapp.com",
-    projectId: "netflix-onja-jerome",
-    storageBucket: "netflix-onja-jerome.appspot.com",
-    messagingSenderId: "862413570524",
-    appId: "1:862413570524:web:6193c3b7126998f6bc4f19"
+    apiKey: process.env.FB_API_KEY,
+    authDomain: process.env.FB_AUTH_DOMIN,
+    projectId: process.env.FB_PROJECT_ID,
+    storageBucket: process.env.FB_STORAGE_BUCKET,
+    messagingSenderId: process.env.FB_MESSAGING_SENDER_ID,
+    appId: process.env.FB_APP_ID
 
 }
 //maybe add databaseUrl
